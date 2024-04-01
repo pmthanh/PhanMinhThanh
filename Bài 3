@@ -1,0 +1,27 @@
+from ._anvil_designer import Form1Template
+from anvil import *
+
+class Form1(Form1Template):
+  def __init__(self, **properties):
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+
+    # Any code you write here will run before the form opens.
+
+  def button_sort_click(self, **event_args):
+       # Xử lý khi button sắp xếp được click
+        input_text = self.text_box_1.text
+        # Chuyển đổi chuỗi đầu vào thành danh sách các số nguyên
+        arr = [int(x) for x in input_text.split()]
+        
+        # Sắp xếp dãy số nguyên
+        arr.sort()
+        
+        # Hiển thị dãy số nguyên đã sắp xếp trên TextBox 2
+        self.text_box_2.text = ' '.join(map(str, arr))
+
+
+
+    
+    
+    
